@@ -1,0 +1,2044 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adonai Estampas - Expressando o que você acredita</title>
+    <meta name="description" content="Estamparia personalizada em Recife-PE. Camisas e vestidos com qualidade, arte própria ou criação. Faça seu orçamento.">
+    <meta name="keywords" content="camisetas personalizadas, estamparia, raglan, vestido, camisa, arte personalizada, Recife">
+    <meta name="author" content="Adonai Estampas">
+    <link rel="canonical" href="https://www.adonaiestampas.com/">
+    <meta property="og:title" content="Adonai Estampas">
+    <meta property="og:description" content="Expresse o que você acredita com camisetas personalizadas de alta qualidade.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="/images/logo.png">
+    <meta property="og:url" content="https://www.adonaiestampas.com/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="theme-color" content="#1d1d1d">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+        :root {
+            --primary: #e63946;
+            --secondary: #f1faee;
+            --dark: #1d1d1d;
+            --light: #f8f9fa;
+            --accent: #e63946;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--dark);
+            color: var(--light);
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 10px;
+            background: #fff;
+            color: #000;
+            padding: 8px 12px;
+            border-radius: 6px;
+            z-index: 2000;
+            transition: top .2s ease;
+        }
+        .skip-link:focus { top: 10px; }
+
+        /* Header Styles */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 20px 0;
+            transition: all 0.3s ease;
+        }
+
+        header.scrolled {
+            background-color: rgba(29, 29, 29, 0.95);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            padding: 15px 0;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 50px;
+            transition: all 0.3s ease;
+        }
+
+        header.scrolled .logo img {
+            height: 40px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .cta-button {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .cta-button:hover {
+            background-color: #c1121f;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(230, 57, 70, 0.2);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--light);
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(to right, rgba(29, 29, 29, 0.9), rgba(29, 29, 29, 0.7)), url('https://images.unsplash.com/photo-1529374255404-311a2a4f1fd9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1769&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .hero-text {
+            max-width: 600px;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-title span {
+            color: var(--primary);
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            line-height: 1.6;
+            color: #ccc;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 20px;
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-image img {
+            max-height: 600px;
+            object-fit: contain;
+            filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
+        }
+
+        .scroll-down {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: var(--light);
+            font-size: 14px;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .scroll-down:hover {
+            opacity: 1;
+            transform: translate(-50%, -5px);
+        }
+
+        .scroll-down i {
+            font-size: 24px;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
+        /* Section Styles */
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 50px;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary);
+        }
+
+        /* Como Pedir Section */
+        .como-pedir {
+            padding: 100px 0;
+            background-color: #222;
+        }
+
+        .steps-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .step-card {
+            background-color: var(--dark);
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .step-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .step-number {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .step-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin: 30px 0 20px;
+        }
+
+        .step-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .step-description {
+            color: #ccc;
+            line-height: 1.6;
+        }
+
+        .cta-section {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .cta-primary {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .cta-primary:hover {
+            background-color: #c1121f;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(230, 57, 70, 0.3);
+        }
+
+        /* Informações Section */
+        .informacoes {
+            padding: 100px 0;
+            background-color: var(--dark);
+        }
+
+        .info-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: start;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .info-text {
+            padding: 20px 0;
+        }
+
+        .info-text h3 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .info-text p {
+            color: #ddd;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .size-chart {
+            margin-top: 50px;
+        }
+
+        .size-chart h3 {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .chart-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .chart-category {
+            background-color: #222;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .chart-category h4 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .chart-image {
+            width: 80px;
+            height: 100px;
+            margin: 0 auto 15px;
+            background-color: #333;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+        }
+
+        .size-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .size-table th,
+        .size-table td {
+            padding: 8px;
+            text-align: center;
+            border: 1px solid #444;
+            font-size: 0.9rem;
+        }
+
+        .size-table th {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .size-table td {
+            background-color: #333;
+        }
+
+        /* Portfolio Section Enhanced */
+        .portfolio {
+            padding: 100px 0;
+            background-color: #222;
+        }
+
+        .portfolio-search {
+            max-width: 400px;
+            margin: 0 auto 40px;
+            position: relative;
+        }
+
+        .portfolio-search input {
+            width: 100%;
+            padding: 15px 50px 15px 20px;
+            border: none;
+            border-radius: 30px;
+            background-color: var(--dark);
+            color: var(--light);
+            font-size: 16px;
+            outline: none;
+        }
+
+        .portfolio-search i {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #666;
+        }
+
+        .portfolio-categories {
+            margin-bottom: 50px;
+        }
+
+        .category-section {
+            margin-bottom: 60px;
+        }
+
+        .category-title {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .category-nav {
+            display: flex;
+            gap: 10px;
+            margin-left: auto;
+        }
+
+        .nav-arrow {
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .nav-arrow:hover {
+            background-color: #c1121f;
+            transform: scale(1.1);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .portfolio-item {
+            background-color: var(--dark);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .portfolio-images {
+            display: flex;
+            height: 200px;
+        }
+
+        .portfolio-front,
+        .portfolio-back {
+            flex: 1;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .portfolio-front img,
+        .portfolio-back img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .portfolio-item:hover .portfolio-front img,
+        .portfolio-item:hover .portfolio-back img {
+            transform: scale(1.05);
+        }
+
+        .image-label {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+        }
+
+        .portfolio-info {
+            padding: 20px;
+        }
+
+        .portfolio-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .color-options {
+            margin-bottom: 15px;
+        }
+
+        .color-label {
+            font-size: 0.9rem;
+            color: #aaa;
+            margin-bottom: 5px;
+        }
+
+        .color-swatches {
+            display: flex;
+            gap: 5px;
+        }
+
+        .color-swatch {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 2px solid #444;
+        }
+
+        .price-badge {
+            background-color: var(--primary);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: inline-block;
+        }
+
+        /* About Section */
+        .about {
+            padding: 100px 0;
+            background-color: var(--dark);
+        }
+
+        .about-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+            color: #ddd;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .about-image {
+            flex: 1;
+            position: relative;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: 100px 0;
+            background-color: #222;
+        }
+
+        .swiper {
+            width: 100%;
+            padding: 50px 0;
+        }
+
+        .testimonial-card {
+            background-color: var(--dark);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            height: auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            color: #ddd;
+            margin-bottom: 20px;
+            line-height: 1.8;
+            flex-grow: 1;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .testimonial-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+        }
+
+        .testimonial-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .testimonial-info h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .testimonial-info p {
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        .testimonial-rating {
+            color: #ffc107;
+            margin-top: 10px;
+        }
+
+        /* CTA Section */
+        .cta {
+            padding: 100px 0;
+            background: linear-gradient(to right, rgba(29, 29, 29, 0.9), rgba(29, 29, 29, 0.7)), url('https://images.unsplash.com/photo-1556905055-8f358a7a47b2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .cta p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            color: #ddd;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .cta-secondary {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .cta-secondary:hover {
+            background-color: white;
+            color: var(--dark);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
+        }
+
+        /* Features */
+        .features { padding: 80px 0; background-color: #222; }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; }
+        .feature-card { background: var(--dark); border: 1px solid #333; border-radius: 16px; padding: 24px; text-align: center; transition: transform .2s ease, box-shadow .2s ease; }
+        .feature-card:hover { transform: translateY(-4px); box-shadow: 0 10px 24px rgba(0,0,0,.2); }
+        .feature-icon { color: var(--primary); font-size: 28px; margin-bottom: 12px; }
+
+        /* Contact */
+        .contact { padding: 80px 0; background-color: var(--dark); }
+        .contact-form { max-width: 900px; margin: 0 auto; }
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .form-field { display: flex; flex-direction: column; gap: 8px; }
+        .form-field span { color: #ddd; font-size: 0.95rem; }
+        .form-field input, .form-field textarea { border-radius: 10px; border: 1px solid #333; background: #111; color: var(--light); padding: 12px; font-size: 1rem; }
+        .form-field input:focus, .form-field textarea:focus { outline: 2px solid var(--primary); outline-offset: 2px; }
+        .grid-col-span-2 { grid-column: span 2; }
+        .form-actions { display: flex; gap: 12px; align-items: center; margin-top: 12px; }
+        .form-status { margin-top: 12px; color: #9ee6a0; min-height: 24px; }
+
+        /* Reveal on scroll */
+        .reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
+        .reveal.in-view { opacity: 1; transform: translateY(0); }
+
+        /* Footer */
+        footer {
+            background-color: #111;
+            padding: 80px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--primary);
+        }
+
+        .footer-column p {
+            color: #aaa;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #aaa;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        .footer-links i {
+            font-size: 14px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: #222;
+            color: var(--light);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #333;
+        }
+
+        .footer-bottom p {
+            color: #777;
+            font-size: 0.9rem;
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: #25d366;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            z-index: 999;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .whatsapp-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1024px) {
+            .hero-title {
+                font-size: 3rem;
+            }
+
+            .about-content {
+                flex-direction: column;
+            }
+
+            .about-image {
+                order: -1;
+                margin-bottom: 30px;
+            }
+
+            .info-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-text {
+                margin-bottom: 50px;
+            }
+
+            .hero-cta {
+                justify-content: center;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .steps-container {
+                grid-template-columns: 1fr;
+            }
+
+            .chart-categories {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 80%;
+            height: 100vh;
+            background-color: var(--dark);
+            z-index: 1001;
+            padding: 80px 40px;
+            transition: right 0.3s ease;
+            box-shadow: -5px 0 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        .mobile-menu-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: var(--light);
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .mobile-nav-links {
+            list-style: none;
+        }
+
+        .mobile-nav-links li {
+            margin-bottom: 20px;
+        }
+
+        .mobile-nav-links a {
+            color: var(--light);
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            display: block;
+            padding: 10px 0;
+        }
+
+        .mobile-nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+    </style>
+</head>
+<body>
+    <a class="skip-link" href="#main">Ir para o conteúdo principal</a>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTUwIiBoZWlnaHQ9IjUwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxnPgogICAgPHRleHQgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjI0IiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0id2hpdGUiIHg9IjEwIiB5PSIzMCI+QWRvbmFpPC90ZXh0PgogICAgPHBhdGggZD0iTTEyMCwxNSBMMTMwLDUgTDE0MCwxNSBMMTMwLDI1IFoiIGZpbGw9IiNlNjM5NDYiIC8+CiAgPC9nPgo8L3N2Zz4=" alt="Adonai Estampas" width="150" height="50" decoding="async">
+            </div>
+
+            <nav class="nav-links" role="navigation" aria-label="Navegação principal">
+                <a href="#home">Home</a>
+                <a href="#como-pedir">Como Pedir</a>
+                <a href="#informacoes">Informações</a>
+                <a href="#portfolio">Portfólio</a>
+                <a href="#contato">Contato</a>
+            </nav>
+
+            <button class="cta-button" onclick="window.location.href='orcamento.html'">
+                <i class="fas fa-tshirt"></i> Fazer Pedido
+            </button>
+
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <button class="mobile-menu-close">
+            <i class="fas fa-times"></i>
+        </button>
+
+        <ul class="mobile-nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#como-pedir">Como Pedir</a></li>
+            <li><a href="#informacoes">Informações</a></li>
+            <li><a href="#portfolio">Portfólio</a></li>
+            <li><a href="#contact">Contato</a></li>
+        </ul>
+    </div>
+
+    <div class="overlay"></div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container hero-content">
+            <div class="hero-text reveal">
+                <h1 class="hero-title">Estampando <span>Camisetas</span> e Fazendo História.</h1>
+                <p class="hero-subtitle">Moda que expressa o que você acredita. Bem-vindo à Adonai Estampas, onde transformamos suas ideias em peças únicas e cheias de personalidade.</p>
+                <div class="hero-cta">
+                    <button class="cta-primary" onclick="window.location.href='orcamento.html'">Ver Produtos</button>
+                    <button class="cta-secondary" onclick="window.location.href='orcamento.html'">Como Pedir</button>
+                </div>
+            </div>
+
+            <div class="hero-image reveal">
+                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjUwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZyBmaWxsPSJub25lIj4KICAgIDxyZWN0IHdpZHRoPSIzMDAiIGhlaWdodD0iNDAwIiB4PSI1MCIgeT0iNTAiIHJ4PSIyMCIgZmlsbD0iI2U2Mzk0NiIgLz4KICAgIDx0ZXh0IGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSI0OCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IndoaXRlIiB4PSIxMDAiIHk9IjI1MCI+QURPTkFJPC90ZXh0PgogICAgPHRleHQgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjI0IiBmaWxsPSJ3aGl0ZSIgeD0iMTIwIiB5PSIzMDAiPkVTVEFNUEFTPC90ZXh0PgogIDwvZz4KPC9zdmc+" alt="Mockup de camiseta Adonai" width="300" height="400" loading="eager" fetchpriority="high" decoding="async">
+            </div>
+        </div>
+
+        <div class="scroll-down">
+            <span>Rolar para baixo</span>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <h2 class="section-title reveal">Destaques</h2>
+            <div class="features-grid">
+                <article class="feature-card reveal" aria-labelledby="fc1-title">
+                    <div class="feature-icon" aria-hidden="true"><i class="fas fa-bolt"></i></div>
+                    <h3 id="fc1-title">Orçamento Rápido</h3>
+                    <p>Configure seu pedido online e receba o orçamento com clareza de preços.</p>
+                </article>
+                <article class="feature-card reveal" aria-labelledby="fc2-title">
+                    <div class="feature-icon" aria-hidden="true"><i class="fas fa-palette"></i></div>
+                    <h3 id="fc2-title">Arte Própria ou Criação</h3>
+                    <p>Envie sua arte ou peça criação com nossa equipe de design.</p>
+                </article>
+                <article class="feature-card reveal" aria-labelledby="fc3-title">
+                    <div class="feature-icon" aria-hidden="true"><i class="fas fa-truck"></i></div>
+                    <h3 id="fc3-title">Entrega em Todo Brasil</h3>
+                    <p>Acompanhe prazos e simule seu frete com uma experiência transparente.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Como Pedir Section -->
+    <section class="como-pedir" id="como-pedir">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">PASSO A PASSO para fazer o seu <span style="color: var(--primary);">pedido</span></h2>
+
+            <div class="steps-container">
+                <div class="step-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="step-number">1</div>
+                    <div class="step-icon">
+                        <i class="fas fa-tshirt"></i>
+                    </div>
+                    <h3 class="step-title">Escolha o modelo</h3>
+                    <p class="step-description">Navegue por nossa coleção e escolha o modelo de camiseta que mais combina com você.</p>
+                </div>
+
+                <div class="step-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="step-number">2</div>
+                    <div class="step-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <h3 class="step-title">Faça um orçamento</h3>
+                    <p class="step-description">Entre em contato conosco via WhatsApp para solicitar seu orçamento personalizado.</p>
+                </div>
+
+                <div class="step-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="step-number">3</div>
+                    <div class="step-icon">
+                        <i class="fas fa-thumbs-up"></i>
+                    </div>
+                    <h3 class="step-title">Aprove a arte</h3>
+                    <p class="step-description">Receba a prévia da sua estampa e aprove o design antes da produção.</p>
+                </div>
+
+                <div class="step-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="step-number">4</div>
+                    <div class="step-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3 class="step-title">Feche o pedido</h3>
+                    <p class="step-description">Confirme seu pedido e realize o pagamento para iniciarmos a produção.</p>
+                </div>
+
+                <div class="step-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="step-number">5</div>
+                    <div class="step-icon">
+                        <i class="fas fa-cog"></i>
+                    </div>
+                    <h3 class="step-title">Aguarde a produção</h3>
+                    <p class="step-description">Nossa equipe especializada produzirá sua camiseta com todo cuidado e qualidade.</p>
+                </div>
+
+                <div class="step-card" data-aos="fade-up" data-aos-delay="600">
+                    <div class="step-number">6</div>
+                    <div class="step-icon">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
+                    <h3 class="step-title">E a chegada da encomenda</h3>
+                    <p class="step-description">Receba sua camiseta personalizada no conforto da sua casa.</p>
+                </div>
+            </div>
+
+            <div class="cta-section" data-aos="fade-up" data-aos-delay="700">
+                <button class="cta-primary" onclick="window.location.href='orcamento.html'">
+                    <i class="fas fa-clock"></i>
+                    Não perca tempo. Faça já o seu orçamento!
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Informações Section -->
+    <section class="informacoes" id="informacoes">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">INFORMAÇÕES <span style="color: var(--primary);">sobre o produto</span></h2>
+
+            <div class="info-content">
+                <div class="video-container" data-aos="fade-right" data-aos-delay="200">
+                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Como usar a tabela de medidas - Adonai Estampas" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+
+                <div class="info-text" data-aos="fade-left" data-aos-delay="200">
+                    <h3>Como usar nossa tabela de medidas</h3>
+                    <p>Caso você nunca tenha feito um pedido conosco ou tem dúvidas acerca dos tamanhos, pode consultar nossa tabela de medidas.</p>
+                    <p>É muito importante escolher o tamanho correto para garantir o melhor caimento e conforto da sua camiseta personalizada.</p>
+                    <p>Assista ao vídeo ao lado para aprender como medir corretamente e escolher o tamanho ideal para você.</p>
+                </div>
+            </div>
+
+            <div class="size-chart" data-aos="fade-up" data-aos-delay="400">
+                <h3>Tabela de Medidas</h3>
+                <h4 style="text-align: center; margin-bottom: 30px; color: var(--primary);">ADULTO</h4>
+
+                <div class="chart-categories">
+                    <div class="chart-category">
+                        <h4>Baby look</h4>
+                        <div class="chart-image">
+                            <i class="fas fa-tshirt" style="font-size: 2rem;"></i>
+                        </div>
+                        <table class="size-table">
+                            <thead>
+                                <tr>
+                                    <th>Tamanho</th>
+                                    <th>Altura</th>
+                                    <th>Largura</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>PP</td><td>52 cm</td><td>35 cm</td></tr>
+                                <tr><td>P</td><td>56 cm</td><td>40 cm</td></tr>
+                                <tr><td>M</td><td>61 cm</td><td>45 cm</td></tr>
+                                <tr><td>G</td><td>67 cm</td><td>48 cm</td></tr>
+                                <tr><td>GG</td><td>69 cm</td><td>54 cm</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="chart-category">
+                        <h4>Tradicional</h4>
+                        <div class="chart-image">
+                            <i class="fas fa-tshirt" style="font-size: 2rem;"></i>
+                        </div>
+                        <table class="size-table">
+                            <thead>
+                                <tr>
+                                    <th>Tamanho</th>
+                                    <th>Altura</th>
+                                    <th>Largura</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>PP</td><td>62 cm</td><td>45 cm</td></tr>
+                                <tr><td>P</td><td>64 cm</td><td>48 cm</td></tr>
+                                <tr><td>M</td><td>67 cm</td><td>51 cm</td></tr>
+                                <tr><td>G</td><td>71 cm</td><td>54 cm</td></tr>
+                                <tr><td>GG</td><td>73 cm</td><td>57 cm</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="chart-category">
+                        <h4>Raglan</h4>
+                        <div class="chart-image">
+                            <i class="fas fa-tshirt" style="font-size: 2rem;"></i>
+                        </div>
+                        <table class="size-table">
+                            <thead>
+                                <tr>
+                                    <th>Tamanho</th>
+                                    <th>Altura</th>
+                                    <th>Largura</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>P</td><td>60 cm</td><td>44 cm</td></tr>
+                                <tr><td>M</td><td>63 cm</td><td>46 cm</td></tr>
+                                <tr><td>G</td><td>68 cm</td><td>48 cm</td></tr>
+                                <tr><td>GG</td><td>72 cm</td><td>53 cm</td></tr>
+                                <tr><td>XG</td><td>77 cm</td><td>65 cm</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="chart-category">
+                        <h4>Vestido</h4>
+                        <div class="chart-image">
+                            <i class="fas fa-tshirt" style="font-size: 2rem;"></i>
+                        </div>
+                        <table class="size-table">
+                            <thead>
+                                <tr>
+                                    <th>Tamanho</th>
+                                    <th>Altura</th>
+                                    <th>Largura</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>PP</td><td>87 cm</td><td>37 cm</td></tr>
+                                <tr><td>P</td><td>92 cm</td><td>39 cm</td></tr>
+                                <tr><td>M</td><td>97 cm</td><td>41 cm</td></tr>
+                                <tr><td>G</td><td>101 cm</td><td>46 cm</td></tr>
+                                <tr><td>GG</td><td>107 cm</td><td>51 cm</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section Enhanced -->
+    <section class="portfolio" id="portfolio">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Portfólio</h2>
+
+            <div class="portfolio-search" data-aos="fade-up" data-aos-delay="100">
+                <input type="text" placeholder="Pesquisar..." id="portfolio-search">
+                <i class="fas fa-search"></i>
+            </div>
+
+            <div class="portfolio-categories">
+                <!-- Discipulado Category -->
+                <div class="category-section" data-aos="fade-up" data-aos-delay="200">
+                    <div class="category-title">
+                        Discipulado
+                        <div class="category-nav">
+                            <button class="nav-arrow" onclick="scrollCategory('discipulado', 'left')">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <button class="nav-arrow" onclick="scrollCategory('discipulado', 'right')">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-grid" id="discipulado-grid">
+                        <div class="portfolio-item">
+                            <div class="portfolio-images">
+                                <div class="portfolio-front">
+                                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZyBmaWxsPSJub25lIj4KICAgIDxyZWN0IHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIiBmaWxsPSIjMDAyODU1IiAvPgogICAgPHRleHQgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjI0IiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0id2hpdGUiIHg9IjgwIiB5PSIxNDAiPkRJUzwvdGV4dD4KICAgIDx0ZXh0IGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIyNCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNlNjM5NDYiIHg9IjgwIiB5PSIxNzAiPkNJUFVMQURPPC90ZXh0PgogIDwvZz4KPC9zdmc+" alt="Discipulado Frente">
+                                    <div class="image-label">FRENTE</div>
+                                </div>
+                                <div class="portfolio-back">
+                                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZyBmaWxsPSJub25lIj4KICAgIDxyZWN0IHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIiBmaWxsPSIjMDAyODU1IiAvPgogICAgPGNpcmNsZSBjeD0iMTUwIiBjeT0iMTUwIiByPSI4MCIgZmlsbD0id2hpdGUiIC8+CiAgICA8dGV4dCBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTgiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjMDAyODU1IiB4PSIxMTAiIHk9IjE1NSI+TG9nbzwvdGV4dD4KICA8L2c+Cjwvc3ZnPg==" alt="Discipulado Costas">
+                                    <div class="image-label">COSTAS</div>
+                                </div>
+                            </div>
+                            <div class="portfolio-info">
+                                <h3 class="portfolio-title">Camiseta Discipulado</h3>
+                                <div class="color-options">
+                                    <div class="color-label">Malha:</div>
+                                    <div class="color-swatches">
+                                        <div class="color-swatch" style="background-color: #002855;"></div>
+                                        <div class="color-swatch" style="background-color: #e63946;"></div>
+                                    </div>
+                                </div>
+                                <div class="color-options">
+                                    <div class="color-label">Estampa:</div>
+                                    <div class="color-swatches">
+                                        <div class="color-swatch" style="background-color: #ffd700;"></div>
+                                        <div class="color-swatch" style="background-color: #e63946;"></div>
+                                    </div>
+                                </div>
+                                <div class="price-badge">Preço de Brinde</div>
+                            </div>
+                        </div>
+
+                        <div class="portfolio-item">
+                            <div class="portfolio-images">
+                                <div class="portfolio-front">
+                                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZyBmaWxsPSJub25lIj4KICAgIDxyZWN0IHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIiBmaWxsPSIjNGNhZjUwIiAvPgogICAgPHRleHQgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjIwIiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0id2hpdGUiIHg9IjgwIiB5PSIxNDAiPkZFIEVNPC90ZXh0PgogICAgPHRleHQgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjIwIiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0id2hpdGUiIHg9IjgwIiB5PSIxNzAiPkFDQU88L3RleHQ+CiAgPC9nPgo8L3N2Zz4=" alt="Fé em Ação Frente">
+                                    <div class="image-label">FRENTE</div>
+                                </div>
+                                <div class="portfolio-back">
+                                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZyBmaWxsPSJub25lIj4KICAgIDxyZWN0IHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIiBmaWxsPSIjNGNhZjUwIiAvPgogICAgPHRleHQgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE2IiBmaWxsPSJ3aGl0ZSIgeD0iNjAiIHk9IjE0MCI+VmVyc2ljdWxvPC90ZXh0PgogICAgPHRleHQgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE2IiBmaWxsPSJ3aGl0ZSIgeD0iNjAiIHk9IjE2MCI+QmlibGljbzwvdGV4dD4KICA8L2c+Cjwvc3ZnPg==" alt="Fé em Ação Costas">
+                                    <div class="image-label">COSTAS</div>
+                                </div>
+                            </div>
+                            <div class="portfolio-info">
+                                <h3 class="portfolio-title">Camiseta Fé em Ação</h3>
+                                <div class="color-options">
+                                    <div class="color-label">Malha:</div>
+                                    <div class="color-swatches">
+                                        <div class="color-swatch" style="background-color: #4caf50;"></div>
+                                    </div>
+                                </div>
+                                <div class="color-options">
+                                    <div class="color-label">Estampa:</div>
+                                    <div class="color-swatches">
+                                        <div class="color-swatch" style="background-color: #ffffff;"></div>
+                                        <div class="color-swatch" style="background-color: #4caf50;"></div>
+                                    </div>
+                                </div>
+                                <div class="price-badge">Preço de Brinde</div>
+                            </div>
+                        </div>
+
+                        <div class="portfolio-item">
+                            <div class="portfolio-images">
+                                <div class="portfolio-front">
+                                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZyBmaWxsPSJub25lIj4KICAgIDxyZWN0IHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIiBmaWxsPSIjZmZmZmZmIiAvPgogICAgPHRleHQgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjI0IiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0iI2ZmYzEwNyIgeD0iMTAwIiB5PSIxNDAiPkZFPC90ZXh0PgogICAgPHRleHQgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjI0IiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0iI2ZmYzEwNyIgeD0iODAiIHk9IjE3MCI+RVNQRVJBPC90ZXh0PgogIDwvZz4KPC9zdmc+" alt="Fé e Esperança Frente">
+                                    <div class="image-label">FRENTE</div>
+                                </div>
+                                <div class="portfolio-back">
+                                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZyBmaWxsPSJub25lIj4KICAgIDxyZWN0IHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIiBmaWxsPSIjZmZmZmZmIiAvPgogICAgPGNpcmNsZSBjeD0iMTUwIiBjeT0iMTUwIiByPSI2MCIgc3Ryb2tlPSIjZmZjMTA3IiBzdHJva2Utd2lkdGg9IjMiIGZpbGw9Im5vbmUiIC8+CiAgICA8dGV4dCBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTYiIGZpbGw9IiNmZmMxMDciIHg9IjEyMCIgeT0iMTU1Ij5Mb2dvPC90ZXh0PgogIDwvZz4KPC9zdmc+" alt="Fé e Esperança Costas">
+                                    <div class="image-label">COSTAS</div>
+                                </div>
+                            </div>
+                            <div class="portfolio-info">
+                                <h3 class="portfolio-title">Camiseta Fé e Esperança</h3>
+                                <div class="color-options">
+                                    <div class="color-label">Malha:</div>
+                                    <div class="color-swatches">
+                                        <div class="color-swatch" style="background-color: #ffffff;"></div>
+                                    </div>
+                                </div>
+                                <div class="color-options">
+                                    <div class="color-label">Estampa:</div>
+                                    <div class="color-swatches">
+                                        <div class="color-swatch" style="background-color: #ffc107;"></div>
+                                        <div class="color-swatch" style="background-color: #333333;"></div>
+                                    </div>
+                                </div>
+                                <div class="price-badge">Preço de Brinde</div>
+                            </div>
+                        </div>
+
+                        <div class="portfolio-item">
+                            <div class="portfolio-images">
+                                <div class="portfolio-front">
+                                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZyBmaWxsPSJub25lIj4KICAgIDxyZWN0IHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIiBmaWxsPSIjOWMyN2IwIiAvPgogICAgPHRleHQgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjIwIiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0id2hpdGUiIHg9IjgwIiB5PSIxNDAiPkRJUzwvdGV4dD4KICAgIDx0ZXh0IGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIyMCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmMxMDciIHg9IjgwIiB5PSIxNzAiPkNJUFVMQURPPC90ZXh0PgogIDwvZz4KPC9zdmc+" alt="Discipulado Roxo Frente">
+                                    <div class="image-label">FRENTE</div>
+                                </div>
+                                <div class="portfolio-back">
+                                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZyBmaWxsPSJub25lIj4KICAgIDxyZWN0IHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIiBmaWxsPSIjOWMyN2IwIiAvPgogICAgPHJlY3QgeD0iNzUiIHk9Ijc1IiB3aWR0aD0iMTUwIiBoZWlnaHQ9IjE1MCIgZmlsbD0iI2ZmYzEwNyIgLz4KICAgIDx0ZXh0IGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNiIgZmlsbD0iIzljMjdiMCIgeD0iMTIwIiB5PSIxNTUiPkxvZ288L3RleHQ+CiAgPC9nPgo8L3N2Zz4=" alt="Discipulado Roxo Costas">
+                                    <div class="image-label">COSTAS</div>
+                                </div>
+                            </div>
+                            <div class="portfolio-info">
+                                <h3 class="portfolio-title">Camiseta Discipulado Especial</h3>
+                                <div class="color-options">
+                                    <div class="color-label">Malha:</div>
+                                    <div class="color-swatches">
+                                        <div class="color-swatch" style="background-color: #9c27b0;"></div>
+                                    </div>
+                                </div>
+                                <div class="color-options">
+                                    <div class="color-label">Estampa:</div>
+                                    <div class="color-swatches">
+                                        <div class="color-swatch" style="background-color: #ffc107;"></div>
+                                    </div>
+                                </div>
+                                <div class="price-badge">Preço de Brinde</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Escola Bíblica Dominical Category -->
+                <div class="category-section" data-aos="fade-up" data-aos-delay="300">
+                    <div class="category-title">
+                        Escola Bíblica Dominical
+                        <div class="category-nav">
+                            <button class="nav-arrow" onclick="scrollCategory('ebd', 'left')">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <button class="nav-arrow" onclick="scrollCategory('ebd', 'right')">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-grid" id="ebd-grid">
+                        <div class="portfolio-item">
+                            <div class="portfolio-images">
+                                <div class="portfolio-front">
+                                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZyBmaWxsPSJub25lIj4KICAgIDxyZWN0IHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIiBmaWxsPSIjMDAyODU1IiAvPgogICAgPHRleHQgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjI0IiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0iI2ZmYzEwNyIgeD0iMTAwIiB5PSIxNDAiPkVCRDwvdGV4dD4KICAgIDx0ZXh0IGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxOCIgZmlsbD0id2hpdGUiIHg9IjgwIiB5PSIxNzAiPjIwMjM8L3RleHQ+CiAgPC9nPgo8L3N2Zz4=" alt="EBD 2023 Frente">
+                                    <div class="image-label">FRENTE</div>
+                                </div>
+                                <div class="portfolio-back">
+                                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZyBmaWxsPSJub25lIj4KICAgIDxyZWN0IHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIiBmaWxsPSIjMDAyODU1IiAvPgogICAgPGNpcmNsZSBjeD0iMTUwIiBjeT0iMTUwIiByPSI4MCIgZmlsbD0iI2ZmYzEwNyIgLz4KICAgIDx0ZXh0IGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxOCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiMwMDI4NTUiIHg9IjEwNSIgeT0iMTU1Ij5Mb2dvPC90ZXhPSJBcmlhbCIgZm9udC1zaXplPSIxOCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiMwMDI4NTUiIHg9IjEwNSIgeT0iMTU1Ij5Mb2dvPC90ZXh0PgogIDwvZz4KPC9zdmc+" alt="EBD 2023 Costas">
+                                    <div class="image-label">COSTAS</div>
+                                </div>
+                            </div>
+                            <div class="portfolio-info">
+                                <h3 class="portfolio-title">EBD 2023</h3>
+                                <div class="color-options">
+                                    <div class="color-label">Malha:</div>
+                                    <div class="color-swatches">
+                                        <div class="color-swatch" style="background-color: #002855;"></div>
+                                    </div>
+                                </div>
+                                <div class="color-options">
+                                    <div class="color-label">Estampa:</div>
+                                    <div class="color-swatches">
+                                        <div class="color-swatch" style="background-color: #ffc107;"></div>
+                                        <div class="color-swatch" style="background-color: #4caf50;"></div>
+                                    </div>
+                                </div>
+                                <div class="price-badge">Preço de Brinde</div>
+                            </div>
+                        </div>
+
+                        <div class="portfolio-item">
+                            <div class="portfolio-images">
+                                <div class="portfolio-front">
+                                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZyBmaWxsPSJub25lIj4KICAgIDxyZWN0IHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIiBmaWxsPSIjNjY2NjY2IiAvPgogICAgPHRleHQgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjIwIiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0id2hpdGUiIHg9IjgwIiB5PSIxNDAiPkVTQ09MQTwvdGV4dD4KICAgIDx0ZXh0IGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIyMCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IndoaXRlIiB4PSI4MCIgeT0iMTcwIj5CSUJMSUNBPC90ZXh0PgogIDwvZz4KPC9zdmc+" alt="Escola Bíblica Frente">
+                                    <div class="image-label">FRENTE</div>
+                                </div>
+                                <div class="portfolio-back">
+                                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZyBmaWxsPSJub25lIj4KICAgIDxyZWN0IHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIiBmaWxsPSIjNjY2NjY2IiAvPgogICAgPHJlY3QgeD0iNzUiIHk9Ijc1IiB3aWR0aD0iMTUwIiBoZWlnaHQ9IjE1MCIgZmlsbD0iIzMzMzMzMyIgLz4KICAgIDx0ZXh0IGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNiIgZmlsbD0id2hpdGUiIHg9IjEyMCIgeT0iMTU1Ij5Mb2dvPC90ZXh0PgogIDwvZz4KPC9zdmc+" alt="Escola Bíblica Costas">
+                                    <div class="image-label">COSTAS</div>
+                                </div>
+                            </div>
+                            <div class="portfolio-info">
+                                <h3 class="portfolio-title">Escola Bíblica</h3>
+                                <div class="color-options">
+                                    <div class="color-label">Malha:</div>
+                                    <div class="color-swatches">
+                                        <div class="color-swatch" style="background-color: #666666;"></div>
+                                    </div>
+                                </div>
+                                <div class="color-options">
+                                    <div class="color-label">Estampa:</div>
+                                    <div class="color-swatches">
+                                        <div class="color-swatch" style="background-color: #ffffff;"></div>
+                                        <div class="color-swatch" style="background-color: #333333;"></div>
+                                    </div>
+                                </div>
+                                <div class="price-badge">Preço de Brinde</div>
+                            </div>
+                        </div>
+
+                        <div class="portfolio-item">
+                            <div class="portfolio-images">
+                                <div class="portfolio-front">
+                                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZyBmaWxsPSJub25lIj4KICAgIDxyZWN0IHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIiBmaWxsPSIjZTYzOTQ2IiAvPgogICAgPHRleHQgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjI0IiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0id2hpdGUiIHg9IjEwMCIgeT0iMTQwIj5FQkQ8L3RleHQ+CiAgICA8dGV4dCBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IndoaXRlIiB4PSI4MCIgeT0iMTcwIj5TdXBlcmludDwvdGV4dD4KICA8L2c+Cjwvc3ZnPg==" alt="EBD Superintendente Frente">
+                                    <div class="image-label">FRENTE</div>
+                                </div>
+                                <div class="portfolio-back">
+                                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZyBmaWxsPSJub25lIj4KICAgIDxyZWN0IHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIiBmaWxsPSIjZTYzOTQ2IiAvPgogICAgPGNpcmNsZSBjeD0iMTUwIiBjeT0iMTUwIiByPSI2MCIgZmlsbD0iIzMzMzMzMyIgLz4KICAgIDx0ZXh0IGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNiIgZmlsbD0id2hpdGUiIHg9IjEyMCIgeT0iMTU1Ij5Mb2dvPC90ZXh0PgogIDwvZz4KPC9zdmc+" alt="EBD Superintendente Costas">
+                                    <div class="image-label">COSTAS</div>
+                                </div>
+                            </div>
+                            <div class="portfolio-info">
+                                <h3 class="portfolio-title">EBD Superintendente</h3>
+                                <div class="color-options">
+                                    <div class="color-label">Malha:</div>
+                                    <div class="color-swatches">
+                                        <div class="color-swatch" style="background-color: #e63946;"></div>
+                                    </div>
+                                </div>
+                                <div class="color-options">
+                                    <div class="color-label">Estampa:</div>
+                                    <div class="color-swatches">
+                                        <div class="color-swatch" style="background-color: #333333;"></div>
+                                        <div class="color-swatch" style="background-color: #ffffff;"></div>
+                                    </div>
+                                </div>
+                                <div class="price-badge">Preço de Brinde</div>
+                            </div>
+                        </div>
+
+                        <div class="portfolio-item">
+                            <div class="portfolio-images">
+                                <div class="portfolio-front">
+                                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZyBmaWxsPSJub25lIj4KICAgIDxyZWN0IHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIiBmaWxsPSIjMDA3MmJjIiAvPgogICAgPHRleHQgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjIwIiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0id2hpdGUiIHg9IjgwIiB5PSIxNDAiPkVTQ09MQTwvdGV4dD4KICAgIDx0ZXh0IGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIyMCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmMxMDciIHg9IjgwIiB5PSIxNzAiPkJJQkxJQ0E8L3RleHQ+CiAgPC9nPgo8L3N2Zz4=" alt="Escola Bíblica Azul Frente">
+                                    <div class="image-label">FRENTE</div>
+                                </div>
+                                <div class="portfolio-back">
+                                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZyBmaWxsPSJub25lIj4KICAgIDxyZWN0IHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIiBmaWxsPSIjMDA3MmJjIiAvPgogICAgPHJlY3QgeD0iNzUiIHk9Ijc1IiB3aWR0aD0iMTUwIiBoZWlnaHQ9IjE1MCIgZmlsbD0iI2ZmYzEwNyIgLz4KICAgIDx0ZXh0IGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNiIgZmlsbD0iIzAwNzJiYyIgeD0iMTIwIiB5PSIxNTUiPkxvZ288L3RleHQ+CiAgPC9nPgo8L3N2Zz4=" alt="Escola Bíblica Azul Costas">
+                                    <div class="image-label">COSTAS</div>
+                                </div>
+                            </div>
+                            <div class="portfolio-info">
+                                <h3 class="portfolio-title">Escola Bíblica Especial</h3>
+                                <div class="color-options">
+                                    <div class="color-label">Malha:</div>
+                                    <div class="color-swatches">
+                                        <div class="color-swatch" style="background-color: #0072bc;"></div>
+                                    </div>
+                                </div>
+                                <div class="color-options">
+                                    <div class="color-label">Estampa:</div>
+                                    <div class="color-swatches">
+                                        <div class="color-swatch" style="background-color: #ffc107;"></div>
+                                        <div class="color-swatch" style="background-color: #ffffff;"></div>
+                                        <div class="color-swatch" style="background-color: #e63946;"></div>
+                                        <div class="color-swatch" style="background-color: #4caf50;"></div>
+                                    </div>
+                                </div>
+                                <div class="price-badge">Preço de Brinde</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Sobre Nós</h2>
+
+            <div class="about-content">
+                <div class="about-text" data-aos="fade-right" data-aos-delay="200">
+                    <h3>Nossa História</h3>
+                    <p>A Adonai Estampas nasceu da paixão por moda e expressão pessoal. Desde 2015, temos trabalhado para oferecer camisetas de alta qualidade que permitem que nossos clientes expressem suas crenças, valores e personalidade.</p>
+                    <p>Nossa missão é simples: criar peças únicas que contem histórias e transmitam mensagens poderosas. Cada estampa é cuidadosamente desenvolvida com atenção aos detalhes e compromisso com a qualidade.</p>
+                    <p>Utilizamos técnicas modernas de estamparia e materiais premium para garantir que cada peça não apenas pareça incrível, mas também dure por muito tempo.</p>
+                </div>
+
+                <div class="about-image" data-aos="fade-left" data-aos-delay="200">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZyBmaWxsPSJub25lIj4KICAgIDxyZWN0IHdpZHRoPSI1MDAiIGhlaWdodD0iMzAwIiByeD0iMTAiIGZpbGw9IiMzMzMiIC8+CiAgICA8Y2lyY2xlIGN4PSIyNTAiIGN5PSIxNTAiIHI9IjEwMCIgZmlsbD0iI2U2Mzk0NiIgLz4KICAgIDx0ZXh0IGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIyNCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IndoaXRlIiB4PSIyMDAiIHk9IjE1NSI+RVNULiAyMDE1PC90ZXh0PgogIDwvZz4KPC9zdmc+" alt="Sobre a Adonai Estampas">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">O Que Nossos Clientes Dizem</h2>
+
+            <div class="swiper testimonials-swiper" data-aos="fade-up" data-aos-delay="200">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-text">
+                                "As camisetas da Adonai Estampas são simplesmente incríveis! A qualidade do tecido e das estampas supera todas as minhas expectativas. Já fiz vários pedidos e sempre fico impressionado com o resultado final."
+                            </div>
+                            <div class="testimonial-author">
+                                <div class="testimonial-avatar">
+                                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZyBmaWxsPSJub25lIj4KICAgIDxjaXJjbGUgY3g9IjUwIiBjeT0iNTAiIHI9IjUwIiBmaWxsPSIjZTYzOTQ2IiAvPgogICAgPGNpcmNsZSBjeD0iNTAiIGN5PSIzNSIgcj0iMTUiIGZpbGw9IndoaXRlIiAvPgogICAgPHBhdGggZD0iTTI1LDg1IEMzNSw2NSA2NSw2NSA3NSw4NSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIzIiBmaWxsPSJub25lIiAvPgogIDwvZz4KPC9zdmc+" alt="Cliente">
+                                </div>
+                                <div class="testimonial-info">
+                                    <h4>João Silva</h4>
+                                    <p>Cliente desde 2020</p>
+                                    <div class="testimonial-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-text">
+                                "Encomendei camisetas personalizadas para o retiro da minha igreja e o resultado foi fantástico! Todos adoraram o design e a qualidade. O atendimento foi excelente e o prazo de entrega foi respeitado."
+                            </div>
+                            <div class="testimonial-author">
+                                <div class="testimonial-avatar">
+                                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZyBmaWxsPSJub25lIj4KICAgIDxjaXJjbGUgY3g9IjUwIiBjeT0iNTAiIHI9IjUwIiBmaWxsPSIjMDA3MmJjIiAvPgogICAgPGNpcmNsZSBjeD0iNTAiIGN5PSIzNSIgcj0iMTUiIGZpbGw9IndoaXRlIiAvPgogICAgPHBhdGggZD0iTTI1LDg1IEMzNSw2NSA2NSw2NSA3NSw4NSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIzIiBmaWxsPSJub25lIiAvPgogIDwvZz4KPC9zdmc+" alt="Cliente">
+                                </div>
+                                <div class="testimonial-info">
+                                    <h4>Maria Oliveira</h4>
+                                    <p>Cliente desde 2019</p>
+                                    <div class="testimonial-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-text">
+                                "Fiz uma encomenda para o aniversário da minha empresa e fiquei muito satisfeito. As camisetas são de ótima qualidade e as estampas ficaram perfeitas. Recomendo a todos que buscam produtos de qualidade e bom atendimento."
+                            </div>
+                            <div class="testimonial-author">
+                                <div class="testimonial-avatar">
+                                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZyBmaWxsPSJub25lIj4KICAgIDxjaXJjbGUgY3g9IjUwIiBjeT0iNTAiIHI9IjUwIiBmaWxsPSIjNGNhZjUwIiAvPgogICAgPGNpcmNsZSBjeD0iNTAiIGN5PSIzNSIgcj0iMTUiIGZpbGw9IndoaXRlIiAvPgogICAgPHBhdGggZD0iTTI1LDg1IEMzNSw2NSA2NSw2NSA3NSw4NSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIzIiBmaWxsPSJub25lIiAvPgogIDwvZz4KPC9zdmc+" alt="Cliente">
+                                </div>
+                                <div class="testimonial-info">
+                                    <h4>Carlos Santos</h4>
+                                    <p>Cliente desde 2021</p>
+                                    <div class="testimonial-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta" id="contact">
+        <div class="container">
+            <h2 data-aos="fade-up">Pronto para Expressar seu Estilo?</h2>
+            <p data-aos="fade-up" data-aos-delay="100">Faça seu orçamento agora mesmo e transforme suas ideias em camisetas únicas e cheias de personalidade. Estamos prontos para atender você!</p>
+            <div class="cta-buttons" data-aos="fade-up" data-aos-delay="200">
+                <button class="cta-primary" onclick="window.location.href='orcamento.html'">Fazer Orçamento</button>
+                <button class="cta-secondary" onclick="window.location.href='orcamento.html'">Ver Catálogo</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="contact" id="contato" aria-labelledby="contact-title">
+        <div class="container">
+            <h2 id="contact-title" class="section-title reveal">Fale Conosco</h2>
+            <form id="contact-form" class="contact-form reveal" novalidate>
+                <div class="form-grid">
+                    <label class="form-field">
+                        <span>Nome</span>
+                        <input type="text" name="name" autocomplete="name" required aria-required="true" />
+                    </label>
+                    <label class="form-field">
+                        <span>E-mail</span>
+                        <input type="email" name="email" autocomplete="email" required aria-required="true" />
+                    </label>
+                    <label class="form-field">
+                        <span>Telefone</span>
+                        <input type="tel" name="phone" autocomplete="tel" inputmode="tel" required aria-required="true" />
+                    </label>
+                    <label class="form-field grid-col-span-2">
+                        <span>Mensagem</span>
+                        <textarea name="message" rows="4" required aria-required="true"></textarea>
+                    </label>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="cta-primary"><i class="fas fa-paper-plane" aria-hidden="true"></i> Enviar</button>
+                    <a class="cta-secondary" href="https://taplink.cc/simuleseufreteadonai" target="_blank" rel="noopener">Simular frete</a>
+                </div>
+                <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Adonai Estampas</h3>
+                    <p>Estampando camisetas e fazendo história desde 2015. Nossa missão é criar peças únicas que expressem sua personalidade e valores.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/5500000000000"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Links Rápidos</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="#como-pedir"><i class="fas fa-chevron-right"></i> Como Pedir</a></li>
+                        <li><a href="#informacoes"><i class="fas fa-chevron-right"></i> Informações</a></li>
+                        <li><a href="#portfolio"><i class="fas fa-chevron-right"></i> Portfólio</a></li>
+                        <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contato</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Produtos</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-tshirt"></i> Camisetas Básicas</a></li>
+                        <li><a href="#"><i class="fas fa-tshirt"></i> Camisetas Premium</a></li>
+                        <li><a href="#"><i class="fas fa-tshirt"></i> Camisetas Polo</a></li>
+                        <li><a href="#"><i class="fas fa-tshirt"></i> Camisetas Longline</a></li>
+                        <li><a href="#"><i class="fas fa-tshirt"></i> Camisetas Personalizadas</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Contato</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> Rua Exemplo, 123 - Cidade</a></li>
+                        <li><a href="#"><i class="fas fa-phone"></i> (00) 12345-6789</a></li>
+                        <li><a href="#"><i class="fas fa-envelope"></i> contato@adonaiestampas.com</a></li>
+                        <li><a href="#"><i class="fas fa-clock"></i> Seg-Sex: 9h às 18h</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2023 Adonai Estampas. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/5500000000000" class="whatsapp-button" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    <a href="orcamento.html" class="whatsapp-button" style="right: 100px;" target="_blank">
+        <i class="fas fa-file-invoice-dollar"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script defer src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script>
+        // Reveal on scroll (IntersectionObserver)
+        const io = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) entry.target.classList.add('in-view')
+          })
+        }, { rootMargin: '0px 0px -10% 0px', threshold: 0.1 })
+        document.querySelectorAll('.reveal').forEach(el => io.observe(el))
+
+        // Header Scroll Effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile Menu
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const mobileMenuClose = document.querySelector('.mobile-menu-close');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const overlay = document.querySelector('.overlay');
+
+        mobileMenuBtn.addEventListener('click', function() {
+            mobileMenu.classList.add('active');
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        mobileMenuClose.addEventListener('click', function() {
+            mobileMenu.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+
+        overlay.addEventListener('click', function() {
+            mobileMenu.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+
+        // Mobile Menu Links
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-links a');
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenu.classList.remove('active');
+                overlay.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+        });
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Scroll Down Button
+        const scrollDownBtn = document.querySelector('.scroll-down');
+        scrollDownBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: window.innerHeight,
+                behavior: 'smooth'
+            });
+        });
+
+        // Portfolio Search
+        const portfolioSearch = document.getElementById('portfolio-search');
+        portfolioSearch.addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+            portfolioItems.forEach(item => {
+                const title = item.querySelector('.portfolio-title').textContent.toLowerCase();
+                if (title.includes(searchTerm)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+
+        // Category Navigation
+        function scrollCategory(categoryId, direction) {
+            const grid = document.getElementById(categoryId + '-grid');
+            const scrollAmount = 300;
+
+            if (direction === 'left') {
+                grid.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+            } else {
+                grid.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+            }
+        }
+
+        // Initialize Swiper (defer loaded)
+        const testimonialSwiper = new Swiper('.testimonials-swiper', {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            breakpoints: {
+                768: {
+                    slidesPerView: 2,
+                },
+                1024: {
+                    slidesPerView: 3,
+                },
+            }
+        });
+
+        // Contact form -> WhatsApp fallback
+        const form = document.getElementById('contact-form')
+        const statusEl = document.getElementById('form-status')
+        const whatsappNumber = '558188511896'
+        form?.addEventListener('submit', (e) => {
+          e.preventDefault()
+          const data = new FormData(form)
+          const name = String(data.get('name') || '').trim()
+          const email = String(data.get('email') || '').trim()
+          const phone = String(data.get('phone') || '').trim()
+          const message = String(data.get('message') || '').trim()
+          if (!name || !email || !phone || !message) {
+            statusEl.textContent = 'Preencha todos os campos obrigatórios.'
+            statusEl.style.color = '#e63946'
+            return
+          }
+          const text = encodeURIComponent(`Olá, sou ${name}. Email: ${email}, Telefone: ${phone}. Mensagem: ${message}`)
+          const url = `https://wa.me/${whatsappNumber}?text=${text}`
+          window.open(url, '_blank', 'noopener')
+          statusEl.textContent = 'Redirecionando para WhatsApp...'
+          statusEl.style.color = '#9ee6a0'
+          form.reset()
+        })
+
+        // Lazy loading for offscreen images (ensure decoding async)
+        document.querySelectorAll('img').forEach(img => {
+          if (!img.hasAttribute('loading')) img.setAttribute('loading', 'lazy')
+          if (!img.hasAttribute('decoding')) img.setAttribute('decoding', 'async')
+        })
+    </script>
+
+    <!--
+    Manutenção:
+    - Cores: altere variáveis em :root (primary, secondary, dark, light).
+    - Navegação: links no <nav> e no footer; mantenha aria-label e roles.
+    - Imagens: use loading="lazy" e decoding="async"; preferir formatos otimizados (webp).
+    - Seções: hero, features, como-pedir, informacoes, portfolio, sobre, depoimentos, CTA, contato, footer.
+    - Acessibilidade: mantenha contraste, rótulos de <label>, foco visível e skip-link.
+    - Desempenho: evite bibliotecas pesadas; use CSS/IntersectionObserver para animações leves.
+    - SEO: atualize meta description, canonical e OG/Twitter quando publicar.
+    - Formulário: integra WhatsApp; para backend, troque handler no JS por fetch para sua API.
+    -->
+</body>
+</html>
