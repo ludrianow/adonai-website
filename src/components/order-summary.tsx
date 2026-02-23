@@ -173,6 +173,12 @@ export function OrderSummary({ orderData, currentStep, onReset }: OrderSummaryPr
               <span className="text-muted-foreground">Preco base:</span>
               <span>{formatPrice(pricing.unitPrice)}</span>
             </div>
+        {pricing.quantityDiscount > 0 && (
+          <div className="flex justify-between">
+            <span className="text-emerald-600">Desconto por quantidade:</span>
+            <span className="text-emerald-600">-{formatPrice(pricing.quantityDiscount)}</span>
+          </div>
+        )}
             {pricing.sleevePrice > 0 && (
               <div className="flex justify-between">
                 <span className="text-muted-foreground">Tipo manga:</span>

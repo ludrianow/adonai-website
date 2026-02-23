@@ -1,8 +1,5 @@
  "use client"
-import { Button } from "@/src/components/ui/button"
-import { FacebookIcon, InstagramIcon, MailIcon, PhoneIcon } from "lucide-react"
 import { Inter } from "next/font/google"
-import Link from "next/link"
 import React, { useEffect, useState } from "react"
 import "./globals.css"
 
@@ -60,75 +57,15 @@ export default function RootLayout({
           <div className="container mx-auto px-4 py-3 flex items-center justify-between">
             <div className="flex items-center">
               <img src="/images/logo.png" alt="Adonai Estampas" className="h-12 object-contain transition-transform duration-300" />
-              {/* <span className="text-background font-semibold">Adonai Estampas</span> */}
-            </div>
-            <nav className="hidden md:flex items-center gap-6 transition-opacity duration-300">
-              <Link href="/" className={["text-sm transition-colors", scrolled ? "text-background hover:text-primary" : "text-white hover:text-primary"].join(" ")}>Início</Link>
-              <Link href="/informacoes" className={["text-sm transition-colors", scrolled ? "text-background hover:text-primary" : "text-white hover:text-primary"].join(" ")}>Informações</Link>
-              <Link href="/como-pedir" className={["text-sm transition-colors", scrolled ? "text-background hover:text-primary" : "text-white hover:text-primary"].join(" ")}>Como pedir</Link>
-              <Link href="/portfolio" className={["text-sm transition-colors", scrolled ? "text-background hover:text-primary" : "text-white hover:text-primary"].join(" ")}>Portfólio</Link>
-            </nav>
-            <div className="flex items-center gap-3 transition-transform duration-300">
-              <Link href="https://orcamento.adonaiestampas.com">
-                <Button className="transition-transform duration-300 hover:-translate-y-0.5">Faça seu orçamento</Button>
-              </Link>
-              <a href="https://taplink.cc/simuleseufreteadonai" target="_blank" rel="noopener noreferrer">
-                <Button variant="outline" className="transition-transform duration-300 hover:-translate-y-0.5">Calcule seu frete</Button>
-              </a>
             </div>
           </div>
         </header>
 
         <main className="min-h-screen pt-16">{children}</main>
 
-        <footer className="bg-secondary py-10 text-muted-foreground">
+        <footer className="bg-transparent py-3 text-muted-foreground">
           <div className="container mx-auto px-4">
-            <div className="grid md:grid-cols-3 gap-10">
-              <div>
-                <img src="/images/logo.png" alt="Adonai Estampas" className="h-20 object-contain transition-transform duration-300" />
-                <div className="h-0.5 w-28 bg-primary my-2" />
-                <p className="mt-3">
-                  Empresa pernambucana líder em camisas de malha 100% algodão, garantindo conforto e qualidade. Atendemos igrejas, escolas, empresas e eventos.
-
-                  Com mais de 8 anos de experiência, conquistamos a confiança de milhares de clientes no Brasil e no Exterior.
-                </p>
-                <div className="mt-4 flex gap-3">
-                  <a href="https://www.instagram.com/adonaiestampas/" aria-label="Instagram" className="bg-background/30 text-foreground hover:bg-primary hover:text-muted border border-border rounded-full h-9 w-9 flex items-center justify-center">
-                    <InstagramIcon className="size-5" />
-                  </a>
-                  <a href="https://www.facebook.com/adonaiestampas/" aria-label="Facebook" className="bg-background/30 text-foreground hover:bg-primary hover:text-muted border border-border rounded-full h-9 w-9 flex items-center justify-center">
-                    <FacebookIcon className="size-5" />
-                  </a>
-                </div>
-              </div>
-
-              <div>
-                <h3 className="text-muted font-semibold text-lg">Links Rápidos</h3>
-                <div className="h-0.5 w-20 bg-primary my-2" />
-                <ul className="space-y-2">
-                  <li><Link href="/" className="hover:text-primary">Início</Link></li>
-                  <li><Link href="/como-pedir" className="hover:text-primary">Como Pedir</Link></li>
-                  <li><Link href="/portfolio" className="hover:text-primary">Portfólio</Link></li>
-                  <li><Link href="https://teste-orcamento.adonaiestampas.com" className="hover:text-primary">Fazer Orçamento</Link></li>
-                </ul>
-              </div>
-
-              <div>
-                <h3 className="text-muted font-semibold text-lg">Contato</h3>
-                <div className="h-0.5 w-20 bg-primary my-2" />
-                <ul className="space-y-3">
-                  <li className="flex items-center gap-2">
-                    <PhoneIcon className="size-5 text-muted-foreground" />
-                    <span>(81) 98804-8443</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <MailIcon className="size-5 text-muted-foreground" />
-                    <span>adonaiestampas@gmail.com</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div className="mt-8 border-t border-border pt-4 text-center text-sm">
+            <div className="py-3 text-center text-sm">
               © 2026 Adonai Estampas. Todos os direitos reservados.
             </div>
           </div>

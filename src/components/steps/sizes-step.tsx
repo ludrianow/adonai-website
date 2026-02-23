@@ -99,26 +99,26 @@ export function SizesStep({ orderData, updateOrderData }: SizesStepProps) {
         </Alert>
       )}
 
-      {isUnlimited && (
+      {/* {isUnlimited && (
         <Alert className="mb-6">
           <AlertCircle className="h-4 w-4" />
           <AlertDescription>
             Total selecionado: <strong>{totalSelected}</strong> unidades (sem limite)
           </AlertDescription>
         </Alert>
-      )}
+      )} */}
 
       {belowMin && (
-        <Alert className="mb-4">
+        <Alert className="mb-4 bg-red-500/80 text-white">
           <AlertCircle className="h-4 w-4" />
-          <AlertDescription>
+          <AlertDescription className="text-white">
             A quantidade total precisa ser de pelo menos <strong>{minQty}</strong> unidades para o range {currentRange?.id}.
           </AlertDescription>
         </Alert>
       )}
 
       {notice && (
-        <Alert className="mb-4">
+        <Alert className="mb-4 bg-yellow-100">
           <AlertCircle className="h-4 w-4" />
           <AlertDescription>{notice}</AlertDescription>
         </Alert>

@@ -4,6 +4,7 @@ import type { OrderData } from "@/src/components/order-form"
 import { Button } from "@/src/components/ui/button"
 import { additionals, calculateTotal, formatPrice, getProductById } from "@/src/lib/pricing-data"
 import { AlertTriangle, CheckCircle2, ChevronLeft } from "lucide-react"
+import { useRouter } from "next/navigation"
 
 interface ReviewStepProps {
   orderData: OrderData
@@ -20,11 +21,11 @@ const quantityLabels: Record<string, string> = {
   "30-49": "Entre 30 e 49",
   "50-99": "Entre 50 e 99",
   "100+": "100 ou mais",
-  "100-199": "100 ou mais",
 }
 
 export function ReviewStep({ orderData, onReset, onBack }: ReviewStepProps) {
   const product = getProductById(orderData.product || "")
+  const router = useRouter()
 
   const formatSizes = () => {
     const sizesWithQuantity = Object.entries(orderData.sizes)
@@ -148,12 +149,11 @@ export function ReviewStep({ orderData, onReset, onBack }: ReviewStepProps) {
     const whatsappUrl = `https://wa.me/558188048443?text=${encodedMessage}`
 
     window.open(whatsappUrl, "_blank")
-
-    setTimeout(() => {
-      if (confirm("Pedido enviado! Deseja iniciar um novo pedido?")) {
-        onReset()
-      }
-    }, 1000)
+    try {
+      onReset()
+    } finally {
+      router.push("/")
+    }
   }
 
   const selectedAdditionals = getSelectedAdditionals()
@@ -242,6 +242,12 @@ export function ReviewStep({ orderData, onReset, onBack }: ReviewStepProps) {
                   <span>Preco base do produto:</span>
                   <span>{formatPrice(pricing.unitPrice)}</span>
                 </div>
+                {pricing.quantityDiscount > 0 && (
+                  <div className="flex justify-between text-sm text-emerald-600">
+                    <span>Desconto por quantidade:</span>
+                    <span>-{formatPrice(pricing.quantityDiscount)}</span>
+                  </div>
+                )}
                 {pricing.sleevePrice > 0 && (
                   <div className="flex justify-between text-sm">
                     <span>Adicional tipo manga ({sleeveVariantName}):</span>

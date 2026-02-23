@@ -14,6 +14,7 @@ export type ProductType = {
   basePrice: number
   sleeveVariants?: SleeveVariant[]
   availableAdditionals: string[]
+  discountTiers?: { min: number; discount: number }[]
 }
 
 export type AdditionalType = {
@@ -33,6 +34,10 @@ export const products: ProductType[] = [
     image: "/images/camisa-basica.png",
     category: "camisa-adulto",
     basePrice: 30,
+    discountTiers: [
+      { min: 50, discount: 1 },   // 50 a 99: -R$1,00
+      { min: 100, discount: 1 },  // 100+: mais -R$1,00 (total -R$2,00)
+    ],
     sleeveVariants: [
       { id: "manga-curta", name: "Manga Curta", priceAdd: 0 },
       { id: "manga-34", name: "Manga 3/4", priceAdd: 3 },
@@ -47,6 +52,10 @@ export const products: ProductType[] = [
     image: "/images/camisa-raglan.png",
     category: "camisa-adulto",
     basePrice: 30,
+    discountTiers: [
+      { min: 50, discount: 1 },
+      { min: 100, discount: 1 },
+    ],
     availableAdditionals: ["manga-estampa", "manga-estampa-total", "estampa-barra", "estampa-manga-barra", "estampa-total", "gola-v"],
   },
   // 3. CAMISA POLO
@@ -56,6 +65,10 @@ export const products: ProductType[] = [
     image: "/images/camisa-polo.png",
     category: "polo-adulto",
     basePrice: 45,
+    discountTiers: [
+      { min: 50, discount: 1 },
+      { min: 100, discount: 1 },
+    ],
     availableAdditionals: ["manga-estampa-polo", "manga-estampa-total-polo", "estampa-barra-polo", "estampa-manga-barra-polo", "estampa-total"],
   },
   // 4. VESTIDO BASICO (Reto)
@@ -114,6 +127,10 @@ export const products: ProductType[] = [
     image: "/images/camisa-infantil.png",
     category: "camisa-infantil",
     basePrice: 26,
+    discountTiers: [
+      { min: 50, discount: 1 },
+      { min: 100, discount: 1 },
+    ],
     availableAdditionals: ["manga-estampa", "manga-estampa-total", "estampa-barra", "estampa-manga-barra", "estampa-total"],
   },
 ]
@@ -215,18 +232,39 @@ export function calculateTotal(
   selectedAdditionals: string[],
   quantity: number,
   sleeveVariant?: string
-): { unitPrice: number; sleevePrice: number; additionalsPrice: number; totalUnit: number; total: number; breakdown: string[] } {
+): {
+  unitPrice: number
+  quantityDiscount: number
+  sleevePrice: number
+  additionalsPrice: number
+  totalUnit: number
+  total: number
+  breakdown: string[]
+} {
   const product = getProductById(productId)
   if (!product) {
-    return { unitPrice: 0, sleevePrice: 0, additionalsPrice: 0, totalUnit: 0, total: 0, breakdown: [] }
+    return { unitPrice: 0, quantityDiscount: 0, sleevePrice: 0, additionalsPrice: 0, totalUnit: 0, total: 0, breakdown: [] }
   }
 
   const unitPrice = product.basePrice
+  let quantityDiscount = 0
   let sleevePrice = 0
   let additionalsPrice = 0
   const breakdown: string[] = []
 
   breakdown.push(`${product.name}: R$ ${unitPrice.toFixed(2)}`)
+
+  if (product.discountTiers && product.discountTiers.length > 0 && quantity > 0) {
+    const sorted = [...product.discountTiers].sort((a, b) => a.min - b.min)
+    for (const tier of sorted) {
+      if (quantity >= tier.min) {
+        quantityDiscount += tier.discount
+      }
+    }
+    if (quantityDiscount > 0) {
+      breakdown.push(`- Desconto por quantidade: R$ ${quantityDiscount.toFixed(2)}`)
+    }
+  }
 
   // Adicionar preco da variacao de manga se houver
   if (sleeveVariant && product.sleeveVariants) {
@@ -253,10 +291,11 @@ export function calculateTotal(
     }
   }
 
-  const totalUnit = hasConsultation ? unitPrice : unitPrice + sleevePrice + additionalsPrice
+  const discountedBase = Math.max(0, unitPrice - quantityDiscount)
+  const totalUnit = hasConsultation ? discountedBase : discountedBase + sleevePrice + additionalsPrice
   const total = totalUnit * quantity
 
-  return { unitPrice, sleevePrice, additionalsPrice, totalUnit, total, breakdown }
+  return { unitPrice, quantityDiscount, sleevePrice, additionalsPrice, totalUnit, total, breakdown }
 }
 
 // Helper para formatar preço
