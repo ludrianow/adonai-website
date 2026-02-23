@@ -39,7 +39,7 @@ export default async function PortfolioPage({
     <main className="min-h-screen bg-background">
       <section className="bg-secondary py-10">
         <div className="container mx-auto px-4">
-          <h1 className="text-3xl font-bold text-foreground">Portfólio</h1>
+          <h1 className="text-3xl font-bold text-muted">Portfólio</h1>
           <p className="text-muted-foreground mt-2">Cada pasta dentro de /images é uma categoria.</p>
         </div>
       </section>

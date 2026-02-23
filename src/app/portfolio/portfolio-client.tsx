@@ -186,6 +186,7 @@ export default function PortfolioClient({
           </form>
           <div className="flex gap-2 overflow-x-auto pb-2">
             <Button
+              className={selectedCat === "Todos" ? "bg-primary text-primary-foreground hover:bg-primary/90" : ""}
               variant={selectedCat === "Todos" ? "outline" : "ghost"}
               aria-pressed={selectedCat === "Todos"}
               onClick={() => setSelectedCat("Todos")}
@@ -195,6 +196,7 @@ export default function PortfolioClient({
             {allCategories.map((c) => (
               <Button
                 key={c}
+                className={selectedCat === c ? "bg-primary text-primary-foreground hover:bg-primary/90" : ""}
                 variant={selectedCat === c ? "outline" : "ghost"}
                 aria-pressed={selectedCat === c}
                 onClick={() => setSelectedCat(c)}
@@ -225,7 +227,7 @@ export default function PortfolioClient({
                   aria-label={`Ver detalhes de ${item.nome}`}
                 >
                   <div className="relative w-full overflow-hidden rounded-md bg-muted h-80">
-                    <div className="h-[70%] w-full">
+                    <div className="h-full w-full">
                       <LazyImage
                         src={item.src}
                         alt={`${item.categoria} · ${item.nome}`}

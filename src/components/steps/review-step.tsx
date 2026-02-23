@@ -20,6 +20,7 @@ const quantityLabels: Record<string, string> = {
   "30-49": "Entre 30 e 49",
   "50-99": "Entre 50 e 99",
   "100+": "100 ou mais",
+  "100-199": "100 ou mais",
 }
 
 export function ReviewStep({ orderData, onReset, onBack }: ReviewStepProps) {

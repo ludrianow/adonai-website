@@ -92,7 +92,19 @@ export function OrderForm() {
       case 2:
         return !!orderData.quantity
       case 3:
-        return Object.values(orderData.sizes).reduce((a, b) => a + b, 0) > 0
+        {
+          const total = Object.values(orderData.sizes).reduce((a, b) => a + b, 0)
+          if (!orderData.quantity) return total > 0
+          const ranges = [
+            { id: "10-29", min: 10, max: 29 },
+            { id: "30-49", min: 30, max: 49 },
+            { id: "50-99", min: 50, max: 99 },
+            { id: "100-199", min: 100, max: Number.POSITIVE_INFINITY },
+          ]
+          const r = ranges.find(x => x.id === orderData.quantity)
+          const min = r?.min ?? 0
+          return total >= min
+        }
       case 4:
         return !!orderData.fabric
       case 5:

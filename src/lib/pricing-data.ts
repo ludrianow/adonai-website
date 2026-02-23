@@ -30,7 +30,7 @@ export const products: ProductType[] = [
   {
     id: "camisa-basica",
     name: "Camisa Basica",
-    image: "/images/camisa-basica.jpeg",
+    image: "/images/camisa-basica.png",
     category: "camisa-adulto",
     basePrice: 30,
     sleeveVariants: [
@@ -44,7 +44,7 @@ export const products: ProductType[] = [
   {
     id: "camisa-raglan",
     name: "Camisa Raglan",
-    image: "/images/camisa-raglan.jpeg",
+    image: "/images/camisa-raglan.png",
     category: "camisa-adulto",
     basePrice: 30,
     availableAdditionals: ["manga-estampa", "manga-estampa-total", "estampa-barra", "estampa-manga-barra", "estampa-total", "gola-v"],
@@ -53,7 +53,7 @@ export const products: ProductType[] = [
   {
     id: "camisa-polo",
     name: "Camisa Polo",
-    image: "/images/camisa-polo.jpeg",
+    image: "/images/camisa-polo.png",
     category: "polo-adulto",
     basePrice: 45,
     availableAdditionals: ["manga-estampa-polo", "manga-estampa-total-polo", "estampa-barra-polo", "estampa-manga-barra-polo", "estampa-total"],
@@ -62,7 +62,7 @@ export const products: ProductType[] = [
   {
     id: "vestido-basico",
     name: "Vestido Basico",
-    image: "/images/vestido-basico.jpeg",
+    image: "/images/vestido-basico.png",
     category: "vestido-reto-adulto",
     basePrice: 60,
     sleeveVariants: [
@@ -75,7 +75,7 @@ export const products: ProductType[] = [
   {
     id: "vestido-raglan",
     name: "Vestido Raglan",
-    image: "/images/vestido-raglan.jpeg",
+    image: "/images/vestido-raglan.png",
     category: "vestido-reto-adulto",
     basePrice: 60,
     availableAdditionals: ["manga-estampa", "manga-estampa-total", "estampa-barra", "estampa-manga-barra", "estampa-total"],
@@ -84,7 +84,7 @@ export const products: ProductType[] = [
   {
     id: "vestido-babado",
     name: "Vestido com Babado",
-    image: "/images/vestido-babado.jpeg",
+    image: "/images/vestido-babado.png",
     category: "vestido-babado-adulto",
     basePrice: 65,
     availableAdditionals: ["manga-estampa", "manga-estampa-total", "estampa-total"],
@@ -93,7 +93,7 @@ export const products: ProductType[] = [
   {
     id: "vestido-infantil-babado",
     name: "Vestido Infantil com Babado",
-    image: "/images/vestido-babado.jpeg",
+    image: "/images/vestido-infantil.png",
     category: "vestido-babado-infantil",
     basePrice: 50,
     availableAdditionals: ["manga-estampa", "manga-estampa-total", "estampa-total"],
@@ -102,7 +102,7 @@ export const products: ProductType[] = [
   {
     id: "vestido-infantil-basico",
     name: "Vestido Infantil Basico",
-    image: "/images/vestido-basico.jpeg",
+    image: "/images/vestido-infantil.png",
     category: "vestido-reto-infantil",
     basePrice: 47,
     availableAdditionals: ["manga-estampa", "manga-estampa-total", "estampa-barra", "estampa-total"],
@@ -111,7 +111,7 @@ export const products: ProductType[] = [
   {
     id: "camisa-basica-infantil",
     name: "Camisa Basica Infantil",
-    image: "/images/camisa-basica.jpeg",
+    image: "/images/camisa-infantil.png",
     category: "camisa-infantil",
     basePrice: 26,
     availableAdditionals: ["manga-estampa", "manga-estampa-total", "estampa-barra", "estampa-manga-barra", "estampa-total"],
@@ -124,42 +124,42 @@ export const additionals: AdditionalType[] = [
   {
     id: "manga-estampa",
     name: "Manga c/ Estampa (detalhe)",
-    image: "/images/basica-estampa-manga.jpeg",
+    image: "/images/estampa-manga-curta.png",
     price: 3,
     appliesTo: ["camisa-adulto", "camisa-infantil", "vestido-reto-adulto", "vestido-reto-infantil", "vestido-babado-adulto", "vestido-babado-infantil"],
   },
   {
     id: "manga-estampa-total",
     name: "Manga c/ Estampa Total",
-    image: "/images/raglan-estampa-manga.jpeg",
+    image: "/images/estampa-total-manga-curta.png",
     price: 5,
     appliesTo: ["camisa-adulto", "camisa-infantil", "vestido-reto-adulto", "vestido-reto-infantil", "vestido-babado-adulto", "vestido-babado-infantil"],
   },
   {
     id: "estampa-barra",
     name: "Estampa na Barra",
-    image: "/images/estampa-barra.jpeg",
+    image: "/images/estampa-barra.png",
     price: 4,
     appliesTo: ["camisa-adulto", "camisa-infantil", "vestido-reto-adulto", "vestido-reto-infantil"],
   },
   {
     id: "estampa-manga-barra",
     name: "Estampa Manga e Barra",
-    image: "/images/estampa-barra.jpeg",
+    image: "/images/estampa-barra-manga-curta.png",
     price: 7,
     appliesTo: ["camisa-adulto", "camisa-infantil", "vestido-reto-adulto"],
   },
   {
     id: "estampa-total",
     name: "Estampa Total",
-    image: "/images/camisa-basica.jpeg",
+    image: "/images/estampa-total.png",
     price: "consulta",
     appliesTo: ["camisa-adulto", "camisa-infantil", "vestido-reto-adulto", "vestido-reto-infantil", "vestido-babado-adulto", "vestido-babado-infantil", "polo-adulto"],
   },
   {
     id: "gola-v",
     name: "Gola V",
-    image: "/images/camisa-basica.jpeg",
+    image: "/images/gola-v.png",
     price: 2,
     appliesTo: ["camisa-adulto"],
   },
@@ -167,28 +167,28 @@ export const additionals: AdditionalType[] = [
   {
     id: "manga-estampa-polo",
     name: "Manga c/ Estampa (detalhe)",
-    image: "/images/basica-estampa-manga.jpeg",
+    image: "/images/estampa-manga-curta.png",
     price: 3,
     appliesTo: ["polo-adulto"],
   },
   {
     id: "manga-estampa-total-polo",
     name: "Manga c/ Estampa Total",
-    image: "/images/raglan-estampa-manga.jpeg",
+    image: "/images/estampa-manga-curta.png",
     price: 5,
     appliesTo: ["polo-adulto"],
   },
   {
     id: "estampa-barra-polo",
     name: "Estampa na Barra",
-    image: "/images/estampa-barra.jpeg",
+    image: "/images/estampa-barra.png",
     price: 5,
     appliesTo: ["polo-adulto"],
   },
   {
     id: "estampa-manga-barra-polo",
     name: "Estampa Manga e Barra",
-    image: "/images/estampa-barra.jpeg",
+    image: "/images/estampa-barra-manga-curta.png",
     price: 8,
     appliesTo: ["polo-adulto"],
   },

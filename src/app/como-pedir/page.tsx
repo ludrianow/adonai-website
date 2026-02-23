@@ -2,7 +2,7 @@
 
  import { Button } from "@/src/components/ui/button"
 import { Card } from "@/src/components/ui/card"
-import { ClipboardCheckIcon, HashIcon, LayersIcon, MapPinIcon, PaletteIcon, PlusCircleIcon, RulerIcon, ShirtIcon, UserIcon } from "lucide-react"
+import { ClipboardCheckIcon, HashIcon, LayersIcon, PaletteIcon, PlusCircleIcon, RulerIcon, ShirtIcon, UserIcon } from "lucide-react"
 import Link from "next/link"
 
  export default function ComoPedirPage() {
@@ -43,50 +43,43 @@ import Link from "next/link"
                ))}
              </div>
            </div>
-           <div className="grid grid-cols-2 gap-4">
-             <img src="/images/camisa-raglan.jpeg" alt="Modelo Raglan" className="w-full h-48 object-cover rounded-md" />
-             <img src="/images/camisa-basica.jpeg" alt="Modelo Básica" className="w-full h-48 object-cover rounded-md" />
-             <img src="/images/vestido-basico.jpeg" alt="Vestido Reto" className="w-full h-48 object-cover rounded-md" />
-             <img src="/images/vestido-babado.jpeg" alt="Vestido Babado" className="w-full h-48 object-cover rounded-md" />
-           </div>
+          <div className="rounded-md overflow-hidden border border-border bg-card">
+            <div className="w-full" style={{ aspectRatio: "16 / 9" }}>
+              <iframe
+                src="https://www.youtube.com/embed/fpKD6reRsXU"
+                title="Como fazer seu pedido"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                referrerPolicy="no-referrer-when-downgrade"
+                className="w-full h-full"
+              />
+            </div>
+          </div>
          </div>
          <div className="mt-8">
-           <Link href="/pedido">
+           <Link href="https://orcamento.adonaiestampas.com">
              <Button className="w-full md:w-auto">Não perca tempo. Faça já o seu orçamento!</Button>
            </Link>
          </div>
        </section>
 
-       <section className="bg-secondary py-10">
+       <section className="bg-secondary pt-10 pb-10">
          <div className="container mx-auto px-4">
            <div className="grid md:grid-cols-2 gap-8 items-center">
              <div>
-               <h2 className="text-xl font-semibold text-foreground">Dúvidas e Informações</h2>
+               <h2 className="text-xl font-semibold text-muted">Dúvidas e Informações</h2>
                <p className="text-muted-foreground mt-2">
                  Em caso de dúvidas, entre em contato conosco através do nosso WhatsApp.
                </p>
                <div className="mt-4 flex gap-3">
-                 <a href="https://wa.me/558188511896" target="_blank" rel="noopener noreferrer">
-                   <Button variant="outline">WhatsApp</Button>
+                 <a  href="https://wa.me/558188048443" target="_blank" rel="noopener noreferrer">
+                   <Button className="hover:bg-primary hover:text-muted" variant="outline">WhatsApp</Button>
                  </a>
-                 <a href="https://taplink.cc/simuleseufreteadonai" target="_blank" rel="noopener noreferrer">
-                   <Button variant="outline">Simular frete</Button>
+                 <a  href="https://taplink.cc/simuleseufreteadonai" target="_blank" rel="noopener noreferrer">
+                   <Button className="hover:bg-primary hover:text-muted" variant="outline">Simular frete</Button>
                  </a>
                </div>
-             </div>
-             <div>
-               <ul className="space-y-2 text-sm">
-                 <li>
-                   <Link className="text-primary underline" href="/portfolio">Portfólio</Link>
-                 </li>
-                 <li>
-                   <Link className="text-primary underline" href="/pedido">Faça seu orçamento</Link>
-                 </li>
-                <li className="flex items-center gap-2">
-                  <MapPinIcon className="h-4 w-4 text-foreground" />
-                  <span className="text-muted-foreground">Recife - PE</span>
-                </li>
-               </ul>
              </div>
            </div>
          </div>

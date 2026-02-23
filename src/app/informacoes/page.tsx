@@ -91,25 +91,42 @@
    { nome: "Azul Claro", hex: "#90CAF9" },
  ]
 
- function Tabela({ titulo, medidas }: { titulo: string; medidas: Medida[] }) {
+function Tabela({
+  titulo,
+  medidas,
+  imageSrc,
+  imageAlt,
+}: {
+  titulo: string
+  medidas: Medida[]
+  imageSrc?: string
+  imageAlt?: string
+}) {
    return (
-     <Card className="p-6 border border-border">
-       <h3 className="text-lg font-semibold">{titulo}</h3>
-       <div className="mt-4 overflow-x-auto">
-         <table className="min-w-full text-sm">
+     <Card className="p-4 border border-border">
+      {imageSrc && (
+        <img
+          src={imageSrc}
+          alt={imageAlt || titulo}
+          className="w-full h-40 mt-4 object-cover rounded-md mb-4"
+        />
+      )}
+      <h3 className="text-lg font-semibold">{titulo}</h3>
+      <div className="mt-4 overflow-x-auto">
+        <table className="w-full text-sm text-center">
            <thead>
-             <tr className="text-left border-b border-border">
-               <th className="py-2 pr-4">Tamanho</th>
-               <th className="py-2 pr-4">Altura (cm)</th>
-               <th className="py-2 pr-4">Largura (cm)</th>
+            <tr className="border-b border-border">
+              <th className="py-1 px-2">Tamanho</th>
+              <th className="py-1 px-2">Altura (cm)</th>
+              <th className="py-1 px-2">Largura (cm)</th>
              </tr>
            </thead>
            <tbody>
              {medidas.map((m) => (
                <tr key={m.tamanho} className="border-b border-border">
-                 <td className="py-2 pr-4">{m.tamanho}</td>
-                 <td className="py-2 pr-4">{m.altura}</td>
-                 <td className="py-2 pr-4">{m.largura}</td>
+                <td className="py-1 px-2">{m.tamanho}</td>
+                <td className="py-1 px-2">{m.altura}</td>
+                <td className="py-1 px-2">{m.largura}</td>
                </tr>
              ))}
            </tbody>
@@ -122,50 +139,72 @@
  export default function InformacoesPage() {
    return (
      <main className="min-h-screen bg-background">
-       <section className="container mx-auto px-4 py-10">
-         <h1 className="text-3xl font-bold text-foreground">Tabela de Medidas</h1>
-         <p className="text-muted-foreground mt-2">Adulto e infantil, com variações por modelo.</p>
-       </section>
-
-      <section className="container mx-auto px-4">
-        <div className="grid md:grid-cols-4 gap-6">
-          <div className="text-center">
-            <img src="/images/camisa-basica.jpeg" alt="Baby look" className="w-full h-40 object-cover rounded-md" />
-            <p className="mt-2 text-sm text-muted-foreground">Baby look</p>
+      <section className="container mx-auto px-4 py-10">
+        <div className="grid md:grid-cols-2 gap-8 items-start">
+          <div>
+            <h1 className="text-3xl font-bold text-foreground">Tabela de Medidas</h1>
+            <p className="text-muted-foreground mt-2">
+              Adulto e infantil, com variações por modelo.
+            </p>
+            <p className="text-muted-foreground mt-4 text-sm">
+              Assista ao vídeo ao lado e aprenda como usar a tabela de medidas da Adonai Estampas.
+            </p>
           </div>
-          <div className="text-center">
-            <img src="/images/camisa-basica.jpeg" alt="Tradicional" className="w-full h-40 object-cover rounded-md" />
-            <p className="mt-2 text-sm text-muted-foreground">Tradicional</p>
-          </div>
-          <div className="text-center">
-            <img src="/images/camisa-raglan.jpeg" alt="Raglan" className="w-full h-40 object-cover rounded-md" />
-            <p className="mt-2 text-sm text-muted-foreground">Raglan</p>
-          </div>
-          <div className="text-center">
-            <img src="/images/vestido-basico.jpeg" alt="Vestido" className="w-full h-40 object-cover rounded-md" />
-            <p className="mt-2 text-sm text-muted-foreground">Vestido</p>
+          <div className="rounded-md overflow-hidden border border-border bg-card">
+            <div className="w-full" style={{ aspectRatio: "16 / 9" }}>
+              <iframe
+                src="https://www.youtube.com/embed/fpKD6reRsXU"
+                title="COMO USAR A TABELA DE MEDIDAS - Adonai Estampas"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                referrerPolicy="no-referrer-when-downgrade"
+                className="w-full h-full"
+              />
+            </div>
           </div>
         </div>
       </section>
 
-       <section className="container mx-auto px-4">
-         <h2 className="text-xl font-semibold text-foreground mb-4">Adulto</h2>
-         <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
-           <Tabela titulo="Baby look" medidas={adultoBabyLook} />
-           <Tabela titulo="Tradicional" medidas={adultoTradicional} />
-           <Tabela titulo="Raglan" medidas={adultoRaglan} />
-           <Tabela titulo="Vestido" medidas={vestido} />
+      <section className="container mx-auto px-4">
+        <h2 className="text-xl font-semibold text-foreground mb-4">Adulto</h2>
+        <div className="grid sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
+           <Tabela
+             titulo="Baby look"
+             medidas={adultoBabyLook}
+             imageSrc="/images/camisa-basica.jpeg"
+             imageAlt="Modelo Baby look"
+           />
+           <Tabela
+             titulo="Tradicional"
+             medidas={adultoTradicional}
+             imageSrc="/images/camisa-basica.jpeg"
+             imageAlt="Modelo Tradicional"
+           />
+           <Tabela
+             titulo="Raglan"
+             medidas={adultoRaglan}
+             imageSrc="/images/camisa-raglan.jpeg"
+             imageAlt="Modelo Raglan"
+           />
+           <Tabela
+             titulo="Vestido"
+             medidas={vestido}
+             imageSrc="/images/vestido-basico.jpeg"
+             imageAlt="Modelo Vestido"
+           />
+           <Tabela
+             titulo="Camisas Infantil"
+             medidas={infantil}
+             imageSrc="/assets/kids-basic-tshirt.jpg"
+             imageAlt="Camisa Infantil"
+           />
          </div>
        </section>
 
-       <section className="container mx-auto px-4 py-10">
-         <h2 className="text-xl font-semibold text-foreground mb-4">Infantil</h2>
-         <Tabela titulo="Camisas Infantil" medidas={infantil} />
-       </section>
-
-       <section className="container mx-auto px-4 pb-12">
+       <section className="container mx-auto px-4 pb-12 mt-12">
          <h2 className="text-xl font-semibold text-foreground mb-4">Opções de cores</h2>
-         <div className="grid sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+         <div className="grid sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-9 gap-3">
            {cores.map((c) => {
              const isDark = ["#000000","#1A2E49","#424242","#6D6D6D","#004D61","#2F4F2F","#800000","#4A148C","#3F51B5"].includes(c.hex)
              return (
@@ -174,7 +213,7 @@
                    className="h-16 w-full"
                    style={{ backgroundColor: c.hex }}
                  />
-                 <div className={`px-3 py-2 text-xs ${isDark ? "text-primary-foreground" : "text-foreground"}`}>
+                 <div className={`px-3 py-2 text-xs text-foreground`}>
                    {c.nome.toUpperCase()}
                  </div>
                </Card>
@@ -182,17 +221,6 @@
            })}
          </div>
        </section>
-
-       {/* <section className="bg-secondary py-10">
-         <div className="container mx-auto px-4 text-center">
-           <p className="text-muted-foreground">Dúvidas e Informações</p>
-           <div className="mt-3">
-             <a href="https://wa.me/558188048443" target="_blank" rel="noopener noreferrer" className="text-primary underline">
-               Fale no WhatsApp
-             </a>
-           </div>
-         </div>
-       </section> */}
      </main>
    )
  }

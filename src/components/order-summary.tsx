@@ -29,6 +29,14 @@ export function OrderSummary({ orderData, currentStep, onReset }: OrderSummaryPr
   const totalQuantity = Object.values(orderData.sizes).reduce((a, b) => a + b, 0)
   const pricing = calculateTotal(orderData.product || "", orderData.additionals, totalQuantity || 1, orderData.sleeveVariant)
 
+  const quantityLabels: Record<string, string> = {
+    "10-29": "Entre 10 e 29",
+    "30-49": "Entre 30 e 49",
+    "50-99": "Entre 50 e 99",
+    "100-199": "100 ou mais",
+    "100+": "100 ou mais",
+  }
+
   const getSleeveVariantName = () => {
     if (!product?.sleeveVariants || !orderData.sleeveVariant) return null
     const sleeve = product.sleeveVariants.find(s => s.id === orderData.sleeveVariant)
@@ -103,7 +111,9 @@ export function OrderSummary({ orderData, currentStep, onReset }: OrderSummaryPr
                     </div>
                   )}
                   {stepItem.key === "quantity" && orderData.quantity && (
-                    <p className="text-foreground font-medium">{orderData.quantity} unidades</p>
+                    <p className="text-foreground font-medium">
+                      {quantityLabels[orderData.quantity] || orderData.quantity}
+                    </p>
                   )}
                   {stepItem.key === "sizes" && Object.values(orderData.sizes).some(v => v > 0) && (
                     <div className="flex flex-wrap gap-1.5">
